@@ -5,9 +5,32 @@ const { width } = Dimensions.get('window')
 const { height } = Dimensions.get('window')
 
 class IntroImagesJoin extends Component {
+  _aboutUs() {
+    console.log('you want to know more')
+  }
+
+  _joinUs() {
+    console.log('you want to join us')
+  }
+
   render() {
     return (
-      <Image style={styles.image} source={{uri: this.props.imageSrc}} />
+      <Image style={styles.image} source={{uri: this.props.imageSrc}}>
+        <View style={styles.buttonPlacement}>
+          <Button
+            onPress={this._aboutUs}
+            title="ABOUT US"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+          />
+          <Button
+            onPress={this._joinUs}
+            title="JOIN US"
+            color="#000"
+            accessibilityLabel="Learn more about this purple button"
+          />
+        </View>
+      </Image>
     )
   }
 }
@@ -15,12 +38,20 @@ class IntroImagesJoin extends Component {
 class IntroImages extends Component {
   render() {
     return (
-      <Image style={styles.image} source={{uri: this.props.imageSrc}} /> 
+      <View>
+        <Image style={styles.image} source={{uri: this.props.imageSrc}} />
+      </View>
     )
   }
 }
 
 export default class App extends Component {
+  // constructor() {
+  //   super()
+  // }
+
+  // componentDidMount() {}
+
   render() {
     return (
       <View style={styles.container}>
@@ -38,7 +69,6 @@ export default class App extends Component {
   }
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -49,5 +79,9 @@ const styles = StyleSheet.create({
   image: {
     width,
     height
+  },
+  buttonPlacement: {
+    flexDirection: 'row',
+    paddingTop: ((height/8) *6)
   }
 })

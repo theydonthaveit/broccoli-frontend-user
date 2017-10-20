@@ -35,7 +35,17 @@ class IntroImagesJoin extends Component {
   }
 }
 
-class IntroImages extends Component {
+class IntroImageSecond extends Component {
+  render() {
+    return (
+      <View>
+        <Image style={styles.image} source={{uri: this.props.imageSrc}} />
+      </View>
+    )
+  }
+}
+
+class IntroImageFirst extends Component {
   render() {
     return (
       <View>
@@ -60,8 +70,8 @@ export default class App extends Component {
           pagingEnabled
           showsHorizontalScrollIndicator={false}
         >
-          <IntroImages imageSrc='http://blog.truephotography.com/wp-content/uploads/2011/02/4be22064-0ec4-481a-9b5a-623143cfd45a-1-600x400.jpg' />
-          <IntroImages imageSrc='http://images.dailyhive.com/20160915073851/smoothie.jpg' />
+          <IntroImageFirst imageSrc='http://blog.truephotography.com/wp-content/uploads/2011/02/4be22064-0ec4-481a-9b5a-623143cfd45a-1-600x400.jpg' />
+          <IntroImageSecond imageSrc='http://images.dailyhive.com/20160915073851/smoothie.jpg' />
           <IntroImagesJoin imageSrc='http://s2.r29static.com//bin/entry/87b/406x487,80/1741652/image.jpg' />
         </ScrollView>
       </View>

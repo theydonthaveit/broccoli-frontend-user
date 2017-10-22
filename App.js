@@ -15,7 +15,11 @@ class IntroImagesJoin extends Component {
 
   render() {
     return (
-      <Image style={styles.image} source={{uri: this.props.imageSrc}}>
+      <View style={styles.image}>
+        <View>
+          <Text style={styles.text}>community</Text>
+          <Text style={styles.text}>Why not be apart of the community?</Text>
+        </View>
         <View style={styles.buttonPlacement}>
           <Button
             onPress={this._aboutUs}
@@ -30,7 +34,7 @@ class IntroImagesJoin extends Component {
             accessibilityLabel="Learn more about this purple button"
           />
         </View>
-      </Image>
+      </View>
     )
   }
 }
@@ -38,9 +42,10 @@ class IntroImagesJoin extends Component {
 class IntroImageSecond extends Component {
   render() {
     return (
-      <View>
-        <Image style={styles.image} source={{uri: this.props.imageSrc}} />
-      </View>
+        <View style={styles.image}>
+          <Text style={styles.text}>welcome</Text>
+          <Text style={styles.text}>welcome to foodtech</Text>
+        </View>
     )
   }
 }
@@ -48,9 +53,10 @@ class IntroImageSecond extends Component {
 class IntroImageFirst extends Component {
   render() {
     return (
-      <View>
-        <Image style={styles.image} source={{uri: this.props.imageSrc}} />
-      </View>
+        <View style={styles.image}>
+          <Text style={styles.text}>foodtech</Text>
+          <Text style={styles.text}>innovating food services</Text>
+        </View>
     )
   }
 }
@@ -70,9 +76,9 @@ export default class App extends Component {
           pagingEnabled
           showsHorizontalScrollIndicator={false}
         >
-          <IntroImageFirst imageSrc='http://blog.truephotography.com/wp-content/uploads/2011/02/4be22064-0ec4-481a-9b5a-623143cfd45a-1-600x400.jpg' />
-          <IntroImageSecond imageSrc='http://images.dailyhive.com/20160915073851/smoothie.jpg' />
-          <IntroImagesJoin imageSrc='http://s2.r29static.com//bin/entry/87b/406x487,80/1741652/image.jpg' />
+          <IntroImageFirst />
+          <IntroImageSecond />
+          <IntroImagesJoin />
         </ScrollView>
       </View>
     )
@@ -82,16 +88,24 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
     height
   },
   image: {
+    paddingTop: ((height/8) *0.4),
+    flex: 1,
     width,
     height
   },
   buttonPlacement: {
     flexDirection: 'row',
-    paddingTop: ((height/8) *6)
+    paddingTop: ((height/8) *5)
+  },
+  text: {
+    paddingLeft: 5,
+    fontSize: 20,
+    color: 'white'
   }
 })

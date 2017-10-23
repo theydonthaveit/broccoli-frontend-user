@@ -23,7 +23,7 @@ const intro = StyleSheet.create({
   text: {
     paddingLeft: 5,
     fontSize: 20,
-    color: 'white'
+    color: 'black'
   }
 })
 

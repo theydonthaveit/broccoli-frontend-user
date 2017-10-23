@@ -10,7 +10,7 @@ export default class AboutUs extends Component {
 
     render() {
         return (
-        <View style={styles.intro.container}>
+        <View>
             <Text>About Us</Text>
         </View>
         )

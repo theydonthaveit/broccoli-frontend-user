@@ -18,7 +18,7 @@ export default class Intro extends Component {
 
     render() {
         return (
-        <View style={styles.intro.container}>
+        <View>
             <ScrollView
                 horizontal
                 pagingEnabled

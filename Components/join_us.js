@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button, ScrollView } from 'react-native'
+import { Text, View, Button, ScrollView } from 'react-native'
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 
 import styles from './styles'
@@ -66,9 +66,20 @@ export default class JoinUs extends Component {
             return 'You got it wrongz'
         }
     }
+
+    _set_card() {}
+    _validate_card() {}
+
+    _set_exp() {}
+    _validate_exp() {}
+
+    _set_cvc() {}
+    _validate_cvc() {}
+
     _submitForm(firstname, password) {
         // Place Validations
         console.log(JSON.stringify(form_inputs))
+        this.props.navigation.navigate('Loading')        
     }
 
     render() {
@@ -109,8 +120,24 @@ export default class JoinUs extends Component {
                         <FormValidationMessage>
                             { this._check_password(this.state.password) }
                         </FormValidationMessage>
+                        <Text>Swipe Left -> Finance</Text>
                     </View>
                     <View style={styles.intro.image}>
+                        <FormLabel>card number</FormLabel>
+                        <FormInput
+                            value={this.state.card}
+                            onChangeText={(card) => this._set_card(card)}/>
+                        <FormValidationMessage>{}</FormValidationMessage>
+                        <FormLabel>expiry date</FormLabel>
+                        <FormInput
+                            value={this.state.exp}
+                            onChangeText={(exp) => this._set_exp(exp)}/>
+                        <FormValidationMessage>{}</FormValidationMessage>
+                        <FormLabel>cvc</FormLabel>
+                        <FormInput
+                            value={this.state.cvc}
+                            onChangeText={(cvc) => this._set_cvc(cvc)}/>
+                        <FormValidationMessage>{}</FormValidationMessage>
                         <Button
                             onPress={this._submitForm}
                             title="Connect"

@@ -11,7 +11,7 @@ const NavApp = StackNavigator({
   Home: { screen: Intro },
   AboutUs: { screen: AboutUs },
   JoinUs: { screen: JoinUs },
-  Loading: { screen: Loading }
+  Loading: { screen: Loading },
   Profile: { screen: Profile }
 })
 

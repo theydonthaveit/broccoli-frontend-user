@@ -5,13 +5,13 @@ import Intro from './Components/intro'
 import AboutUs from './Components/about_us'
 import JoinUs from './Components/join_us'
 import Loading from './Components/loading'
-import Profile from './Components/Profile'
+import Profile from './Components/profile'
 
 const NavApp = StackNavigator({
   Home: { screen: Intro },
   AboutUs: { screen: AboutUs },
   JoinUs: { screen: JoinUs },
-  Loading: { screen: Loading },
+  Loading: { screen: Loading }
   Profile: { screen: Profile }
 })
 

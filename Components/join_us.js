@@ -76,7 +76,7 @@ export default class JoinUs extends Component {
     _set_cvc() {}
     _validate_cvc() {}
 
-    _submitForm(firstname, password) {
+    _submitForm = () => {
         // Place Validations
         console.log(JSON.stringify(form_inputs))
         this.props.navigation.navigate('Loading')        

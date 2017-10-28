@@ -1,0 +1,3 @@
+let FormData = {}
+
+export { FormData }

@@ -6,10 +6,9 @@ const { height } = Dimensions.get('window')
 const intro = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
     alignItems: 'center',
-    justifyContent: 'center',
-    height
+    justifyContent: 'center'
   },
   image: {
     flex: 1,
@@ -24,6 +23,13 @@ const intro = StyleSheet.create({
     paddingLeft: 5,
     fontSize: 20,
     color: 'black'
+  },
+  buttonView: {
+    width,
+    flexDirection: 'row'
+  },
+  buttonIntro: {
+    width: width/3
   }
 })
 

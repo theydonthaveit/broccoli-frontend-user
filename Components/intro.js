@@ -18,7 +18,6 @@ export default class Intro extends Component {
 
     render() {
         return (
-        <View>
             <ScrollView
                 horizontal
                 pagingEnabled
@@ -53,7 +52,6 @@ export default class Intro extends Component {
                     </View>
                 </View>
             </ScrollView>
-        </View>
         )
     }
 }

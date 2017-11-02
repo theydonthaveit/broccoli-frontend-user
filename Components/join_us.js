@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import {Button} from 'react-native'
 import { TabNavigator } from 'react-navigation'
 
+import {FormData} from './join_us_tabs/tab_data'
 import Personal from './join_us_tabs/personal'
 import Password from './join_us_tabs/password'
 import Finance from './join_us_tabs/finance'
@@ -24,11 +26,17 @@ const JoinUsTabs = TabNavigator({
 );
 
 export default class JoinUs extends Component {
+    
     static navigationOptions = {
-        title: 'Join Us'
+        title: 'Join Us',
+        headerRight: <Button 
+            title='Join Us'
+            onPress={() => this.props.navigation.navigate('Loading')} />
     }
 
     render() {
-        return <JoinUsTabs />;
+        return (
+            <JoinUsTabs />
+        );
     }
 }

@@ -2,38 +2,34 @@ import React, { Component } from 'react'
 import { Image, Button, StyleSheet, View } from 'react-native'
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 
-const styles = StyleSheet.create({
-    icon: {
-      width: 26,
-      height: 26
-    }
-});
+import { FormData } from './tab_data'
 
 export default class Password extends Component {
     static navigationOptions = {
         tabBarLabel: 'Password',
-        // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-        tabBarIcon: ({ tintColor }) => (
-            <Image
-                source={{uri: 'https://image.flaticon.com/icons/png/128/25/25297.png'}}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
-        ),
     };
+
+    state = {
+        password: '',
+        repassword: ''
+    }
+
+    _add_password_to_form_data(password) {
+        this.setState({password})
+        
+        FormData.password = password
+    }
 
     render() {
         return (
             <View>
                 <FormLabel>Password</FormLabel>
                 <FormInput
-                    value='password'
-                    onChangeText={(card) => console.log(card)}/>
+                    onChangeText={(password) => this._add_password_to_form_data(password)}/>
                 <FormValidationMessage>{}</FormValidationMessage>
                 <FormLabel>Re-Password</FormLabel>
                 <FormInput
-                    value='re-password'
-                    onChangeText={(exp) => console.log(exp)}/>
-                <FormValidationMessage>{}</FormValidationMessage>
+                    onChangeText={(repassword) => this.setState({repassword})}/>
             </View>
         );
     }

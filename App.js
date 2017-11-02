@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation'
 import Intro from './Components/intro'
 import AboutUs from './Components/about_us'
 import JoinUs from './Components/join_us'
+import Finance from './Components/join_us_tabs/finance'
 import Loading from './Components/loading'
 import Profile from './Components/profile'
 
